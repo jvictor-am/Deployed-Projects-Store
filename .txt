@@ -1,0 +1,16 @@
+npm init
+
+ - package name: (store-of-deployed-projects)
+ - version: (1.0.0)
+ - description: App to store (public & private) links of deployed projects
+ - entry point: (index.js) app.js
+ - test command:
+ - git repository:
+ - keywords:
+ - author: Joao Victor
+ - license: (ISC) MIT
+
+ npm i express mongoose connect-mongo express-session express-handlebars 
+ npm i dotenv method-override moment morgan passport passport-google-oauth20
+
+ npm i -D nodemon cross-env
