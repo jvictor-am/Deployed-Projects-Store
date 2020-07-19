@@ -10,7 +10,8 @@ npm init
  - author: Joao Victor
  - license: (ISC) MIT
 
- npm i express mongoose connect-mongo express-session express-handlebars 
- npm i dotenv method-override moment morgan passport passport-google-oauth20
+npm i express mongoose connect-mongo express-session express-handlebars 
+npm i dotenv method-override moment morgan passport passport-google-oauth20
+npm i passport-github
 
- npm i -D nodemon cross-env
+npm i -D nodemon cross-env
