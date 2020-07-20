@@ -2,13 +2,33 @@ p {
   margin: 10px 0 !important;
 }
 
+.h1 {
+  display: flex;
+  font-size: 48px;
+  text-align: center;
+  flex-direction: column;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  /* width: 700px; */
+  width: 97.5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  /* padding-top: -10px; */
+  /* padding-left: 20px; */
+  padding-bottom: 10px;
+  border: 1px solid #eee;
+}
+
 .dashboard {
   display: flex;
   flex-direction: column;
   margin-left: 50%;
   transform: translate(-50%, 0);
   /* width: 700px; */
-  width: 75%;
+  width: 78%;
   margin-top: 20px;
   background-color: #000;
   color: #fff;
@@ -24,19 +44,35 @@ p {
   margin-left: 50%;
   transform: translate(-50%, 0);
   /* width: 700px; */
-  width: 75%;
+  width: 78%;
   margin-top: 20px;
   background-color: #000;
   color: #fff;
   border-radius: 8px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  /* padding-left: 20px; */
+  padding: 20px;
+  /* padding-bottom: 20px; */
   border: 1px solid #76ff03;
   /* border: 1px solid #00ff00; */
 }
 
+th {
+  color: #76ff03;
+  text-align: center;
+  background-color: #000;
+  padding: 0px 10px 15px 10px;
+}
+
+td {
+  /* border: 1px solid #76ff03; */
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+}
+
 .add-container {
   margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #000;
   padding: 5px 50px 0px 50px;
   margin-left: 50%;
@@ -47,9 +83,6 @@ p {
   border: 1px solid #eee;
 }
 
-/* input[type='text'] {
-  color: #fff;
-} */
 input {
   color: #fff !important;
 }
@@ -70,12 +103,38 @@ textarea {
   background-color: #333;
   border-radius: 8px;
   border: 1px solid #eee;
+  color: #fff;
+}
+
+.card-text {
+  text-align: center;
 }
 
 .btn {
   margin-top: 10px;
   margin-bottom: -10px;
   border-radius: 8px;
+}
+
+/* .btn-floating i {
+  font-size: 22px;
+  padding-left: 2px;
+} */
+
+.fa-small {
+  font-size: 20px !important;
+  padding-left: 2px;
+}
+
+.read-more {
+  margin-bottom: 10px !important;
+  border-radius: 4px !important;
+  color: #000;
+  font-weight: bold;
+}
+
+.card .card-action:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 body {

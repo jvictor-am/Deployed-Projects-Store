@@ -19,11 +19,23 @@ connectDB();
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
+const { formatDate, truncate, stripTags, editIcon } = require('./helpers/hbs');
+
+app.engine(
+  '.hbs',
+  exphbs({
+    helpers: { formatDate, truncate, stripTags, editIcon },
+    efaultLayout: 'main',
+    extname: '.hbs',
+  })
+);
 app.set('view engine', '.hbs');
 
 app.use(
@@ -37,6 +49,13 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set global var
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null;
+  next();
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
