@@ -18,11 +18,27 @@
     <tbody>
       {{#each projects}}
       <tr>
-        <td><a href="/projects/edit/{{_id}}" style="color: #ff3d00; font-style: italic">{{name}}</a></td>
+        {{!-- <td><a href="/projects/edit/{{_id}}" style="color: #ff3d00; font-style: italic">{{name}}</a></td> --}}
+        <td><a href="/projects/edit/{{_id}}" style="color: #039be5 ; font-style: italic; font-weight: bold">{{name}}</a>
+        </td>
         <td><span class="dash-status">{{status}}</span></td>
         <td><a href="{{link}}" style="color: #039be5">{{link}}</a></td>
         <td>{{formatDate createdAt 'MMM Do YYYY'}}</td>
-        {{!-- <td></td> --}}
+        <td>
+          <div class="buttons">
+            <a href="/projects/edit/{{_id}}" class="btn btn-edit btn-float deep-orange accent-3">
+              <i class="fas fa-edit"></i>
+            </a>
+
+            <form action="/projects/{{_id}}" method="POST" id="delete-form">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn btn-delete red accent-4">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </div>
+
+        </td>
       </tr>
       {{/each}}
     </tbody>
