@@ -163,6 +163,11 @@ textarea {
   padding-left: 2px;
 }
 
+.fa-edit:before {
+  color: #fff;
+  font-size: 20px;
+}
+
 .read-more {
   margin-bottom: 10px !important;
   border-radius: 4px !important;
@@ -210,6 +215,10 @@ input:-webkit-autofill:focus
   font-weight: bold;
 }
 
+.btn-error:hover {
+  background-color: #039be5;
+}
+
 .btn-float {
   /* float: left; */
   margin-right: 10px;
@@ -221,4 +230,9 @@ input:-webkit-autofill:focus
   align-items: center;
   justify-content: center;
   margin-left: 10px;
+}
+
+.img-small {
+  width: 130px;
+  border: 1px solid #f1f1f1;
 }
