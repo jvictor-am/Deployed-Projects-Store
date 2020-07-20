@@ -10,11 +10,12 @@
       </div>
       <div class="card-content center-align">
         <h5>{{name}}</h5>
-        <p class="card-text">{{stripTags (truncate body 100)}}</p>
+        <a href="{{link}}">{{truncate link 32}}</a>
+        <p class="card-text">{{stripTags (truncate body 60)}}</p>
         <br>
         <div class="chip">
           <img src="{{user.image}}" alt="">
-          <a href="/projects/user/{{user._id}}">{{user.displayName}}</a>
+          <a href="/projects/user/{{user._id}}">{{truncate user.displayName 30}}</a>
         </div>
       </div>
       <div class="card-action center-align">

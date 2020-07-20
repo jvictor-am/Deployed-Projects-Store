@@ -31,7 +31,39 @@ router.get('/', ensureAuth, async (req, res) => {
     console.error(err);
     res.render('error/500');
   }
-  // res.render('projects/add');
+});
+
+router.get('/edit/:id', ensureAuth, async (req, res) => {
+  const project = await Project.findOne({ _id: req.params.id }).lean();
+
+  if (!project) {
+    return res.render('error/404');
+  }
+
+  if (project.user != req.user.id) {
+    res.redirect('/projects');
+  } else {
+    res.render('projects/edit', { project });
+  }
+});
+
+router.put('/:id', ensureAuth, async (req, res) => {
+  let project = await Project.findById(req.params.id).lean();
+
+  if (!project) {
+    return res.render('error/404');
+  }
+
+  if (project.user != req.user.id) {
+    res.redirect('/projects');
+  } else {
+    project = await Project.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.redirect('/dashboard');
+  }
 });
 
 module.exports = router;
