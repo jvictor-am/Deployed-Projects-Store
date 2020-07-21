@@ -1,12 +1,9 @@
 <div class="row">
   <div class="col s12 m8" style="margin-top: 30px">
-    {{!-- <h3>{{project.name}}
-      <small>{{{editIcon project.user user project._id false}}}</small>
-    </h3> --}}
     <div class="card story">
       <div class="card-content">
         <h4 style=" display: flex; align-items: center; justify-content: center; margin-top: 0px; margin-bottom: 20px">
-          <span style="text-shadow: 3px 2px #ff3d00">{{project.name}}</span>
+          <span>{{project.name}}</span>
           <small
             style="margin-left: 10px; text-shadow: 3px 2px #ff3d00;">{{{editIcon project.user user project._id false}}}</small>
         </h4>
@@ -24,7 +21,6 @@
         <img src="{{project.user.image}}" class="circle responsive-img img-small" style="margin-top: 10px">
       </div>
       <div class="card-action" style="text-align: center">
-        {{!-- <a href="/projects/user/{{project.user._id}}">More From {{truncate project.user.displayName 15}}</a> --}}
         <a href="/projects/user/{{project.user._id}}">More From {{ project.user.displayName }}</a>
       </div>
     </div>

@@ -12,14 +12,12 @@
         <th>Status</th>
         <th>Link</th>
         <th>Date</th>
-        {{!-- <th></th> --}}
       </tr>
     </thead>
     <tbody>
       {{#each projects}}
       <tr>
-        {{!-- <td><a href="/projects/edit/{{_id}}" style="color: #ff3d00; font-style: italic">{{name}}</a></td> --}}
-        <td><a href="/projects/edit/{{_id}}" style="color: #039be5 ; font-style: italic; font-weight: bold">{{name}}</a>
+        <td><a href="/projects/{{_id}}" style="color: #039be5 ; font-style: italic; font-weight: bold">{{name}}</a>
         </td>
         <td><span class="dash-status">{{status}}</span></td>
         <td><a href="{{link}}" style="color: #039be5">{{link}}</a></td>
@@ -45,6 +43,8 @@
   </table>
 
   {{else}}
-  <p>You have not created any projects</p>
+  <div class="no-projects">
+    <p>You have not created any projects !</p>
+  </div>
   {{/if}}
 </div>

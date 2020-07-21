@@ -123,11 +123,29 @@ router.delete('/:id', ensureAuth, async (req, res) => {
       await Project.remove({ _id: req.params.id });
       res.redirect('/dashboard');
     }
-    // await Project.remove({ _id: req.params.id });
-    // res.redirect('/dashboard');
   } catch (err) {
     console.error(err);
     return res.render('error/500');
+  }
+});
+
+// @desc    User projects
+// @route   GET /projects/user/:userId
+router.get('/user/:userId', ensureAuth, async (req, res) => {
+  try {
+    const projects = await Project.find({
+      user: req.params.userId,
+      status: 'Public',
+    })
+      .populate('user')
+      .lean();
+
+    res.render('projects/index', {
+      projects,
+    });
+  } catch (err) {
+    console.error(err);
+    res.render('error/500');
   }
 });
 

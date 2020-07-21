@@ -15,14 +15,11 @@ p {
   transform: translate(-50%, 0);
   /* width: 700px; */
   width: 97.5%;
-  /* width: 100%; */
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #000;
   color: #fff;
   border-radius: 8px;
-  /* padding-top: -10px; */
-  /* padding-left: 20px; */
   padding-bottom: 10px;
   border: 1px solid #eee;
 }
@@ -43,6 +40,21 @@ p {
   padding-bottom: 20px;
   border: 1px solid #039be5;
   /* border: 1px solid #eee; */
+}
+
+.no-projects {
+  display: flex;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  width: 97.5%;
+  background-color: black;
+  border-radius: 8px;
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .content {
@@ -152,11 +164,6 @@ textarea {
   margin-bottom: -10px;
   border-radius: 8px;
 }
-
-/* .btn-floating i {
-  font-size: 22px;
-  padding-left: 2px;
-} */
 
 .fa-small {
   font-size: 20px !important;
